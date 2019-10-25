@@ -26,6 +26,11 @@ class FeatureExtractor(object):
         award['Name_processed'] = award['Name_processed'].str.replace('[^\w]','')
         award_features = award.groupby(['Name_processed'])['amount'].agg(['count','sum'])
 
+        def zipcodes(X):
+            zipcode_nums = pd.to_numeric(X['Zipcode'], errors='coerce')
+            return zipcode_nums.values[:, np.newaxis]
+        zipcode_transformer = FunctionTransformer(zipcodes, validate=False)
+
         numeric_transformer = Pipeline(steps=[
             ('impute', SimpleImputer(strategy='median'))])
 
@@ -37,7 +42,6 @@ class FeatureExtractor(object):
         def process_APE(X):
             APE = X['Activity_code (APE)'].str[:2]
             return pd.to_numeric(APE).values[:, np.newaxis]
-
         APE_transformer = FunctionTransformer(process_APE, validate=False)
 
         def merge_naive(X):
@@ -49,6 +53,7 @@ class FeatureExtractor(object):
         merge_transformer = FunctionTransformer(merge_naive, validate=False)
 
         num_cols = X_encoded.select_dtypes([np.number]).columns
+        zipcode_col = ['Zipcode']
         date_cols = ['Fiscal_year_end_date']
         APE_col = ['Activity_code (APE)']
         merge_col = ['Name']
@@ -56,6 +61,7 @@ class FeatureExtractor(object):
 
         preprocessor = ColumnTransformer(
             transformers=[
+                ('zipcode', make_pipeline(zipcode_transformer, SimpleImputer(strategy='median')), zipcode_col),
                 ('num', numeric_transformer, num_cols),
                 ('date', make_pipeline(date_transformer, SimpleImputer(strategy='median')), date_cols),
                 ('APE', make_pipeline(APE_transformer, SimpleImputer(strategy='median')), APE_col),
