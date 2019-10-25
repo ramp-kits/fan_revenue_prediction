@@ -52,7 +52,8 @@ class FeatureExtractor(object):
             return df[['count','sum']]
         merge_transformer = FunctionTransformer(merge_naive, validate=False)
 
-        num_cols = X_encoded.select_dtypes([np.number]).columns
+        num_cols = ['Legal_ID', 'Headcount', 
+                    'Fiscal_year_duration_in_months', 'Year']
         zipcode_col = ['Zipcode']
         date_cols = ['Fiscal_year_end_date']
         APE_col = ['Activity_code (APE)']
