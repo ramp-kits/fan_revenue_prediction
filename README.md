@@ -15,10 +15,12 @@ This starting kit requires Python and the following dependencies:
 * `jupyter`
 * `ramp-workflow`
 
-To execute the jupyter notebook, from the root directory using:
+You can get started on this RAMP challenge with the
+[dedicated notebook](FAN_starting_kit.ipynb) by running the following command
+from the root directory:
 
 ```
-jupyter notebook autism_starting_kit.ipynb
+jupyter notebook FAN_starting_kit.ipynb
 ```
 ## Advanced install using `conda` (optional)
 
@@ -40,8 +42,6 @@ for Linux and MacOS. In Windows, use the following command instead:
 ```
 activate FAN
 ```
-
-Get started on this RAMP challenge with the [dedicated notebook](FAN_starting_kit.ipynb).
 
 For more information on the [RAMP](http:www.ramp.studio) ecosystem go to
 [`ramp-worflow`](https://github.com/paris-saclay-cds/ramp-workflow).
