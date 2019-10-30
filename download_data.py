@@ -8,12 +8,12 @@ except ImportError:
     from urllib import urlretrieve
 
 # full URLS:
-# https://ndownloader.figshare.com/files/18165911 # award notices
+# https://ndownloader.figshare.com/files/18174818 # award notices
 # https://ndownloader.figshare.com/files/18165908 # test
 # https://ndownloader.figshare.com/files/18165905 # train
 
 URLBASE = 'https://ndownloader.figshare.com/files/{}'
-URLS = ['18165911', '18165905', '18165908']
+URLS = ['18174818', '18165905', '18165908']
 DATA = ['award_notices_RAMP.csv', 'company_revenue_TRAIN.csv',
         'company_revenue_TEST.csv']
 
