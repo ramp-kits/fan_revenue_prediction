@@ -51,7 +51,8 @@ def get_cv(X, y):
     return cv.split(X,y, groups=X['Legal_ID'])
 
 def _read_data(path, f_name):
-    data = pd.read_csv(os.path.join(path, 'data', f_name), low_memory=False)
+    data = pd.read_csv(os.path.join(path, 'data', f_name), low_memory=False,
+                       compression='zip')
     y_array = data[_target_column_name].values
     X_df = data.drop(_target_column_name, axis=1)
     return X_df, y_array

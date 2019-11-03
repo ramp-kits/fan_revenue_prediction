@@ -19,8 +19,8 @@ class FeatureExtractor(object):
         X_encoded = X_df
 
         path = os.path.dirname(__file__)
-        award = pd.read_csv(os.path.join(path, 'award_notices_RAMP.csv'),
-                            low_memory=False)
+        award = pd.read_csv(os.path.join(path, 'award_notices_RAMP.csv.zip'),
+                            compression='zip', low_memory=False)
         # obtain features from award
         award['Name_processed'] = award['incumbent_name'].str.lower()
         award['Name_processed'] = award['Name_processed'].str.replace('[^\w]','')
