@@ -58,9 +58,9 @@ def _read_data(path, f_name):
     return X_df, y_array
 
 def get_train_data(path='.'):
-    f_name = 'company_revenue_TRAIN.csv'
+    f_name = 'company_revenue_TRAIN.csv.zip'
     return _read_data(path, f_name)
 
 def get_test_data(path='.'):
-    f_name = 'company_revenue_TEST.csv'
+    f_name = 'company_revenue_TEST.csv.zip'
     return _read_data(path, f_name)
