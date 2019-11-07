@@ -16,6 +16,7 @@ install:
     - pip install -r requirements.txt
 script:
     - flake8 *.py submissions/*/*.py
+    - python download_data.py
     - ramp_test_submission
     - jupyter nbconvert --execute FAN_starting_kit.ipynb --ExecutePreprocessor.kernel_name=$IPYTHON_KERNEL --ExecutePreprocessor.timeout=600
 notifications:
