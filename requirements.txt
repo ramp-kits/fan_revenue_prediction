@@ -4,3 +4,8 @@ pandas
 scikit-learn>=0.20
 matplotlib
 jupyter
+lightgbm
+catboost
+xgboost
+category_encoders
+spacy

@@ -13,6 +13,7 @@ dependencies:
   - catboost
   - xgboost
   - category_encoders
+  - spacy
   - pip:
       - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
       - recordlinkage
