@@ -3,4 +3,5 @@ scipy
 pandas
 scikit-learn>=0.20
 matplotlib
+seaborn
 jupyter
