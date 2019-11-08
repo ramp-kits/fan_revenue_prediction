@@ -1,4 +1,5 @@
 language: python
+install: travis_wait mvn install
 env:
   - PYTHON_VERSION=2.7 IPYTHON_KERNEL=python2
   - PYTHON_VERSION=3.6 IPYTHON_KERNEL=python3
