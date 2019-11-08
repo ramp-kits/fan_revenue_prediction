@@ -18,6 +18,7 @@ URLS = ['18473234', '18475136', '18474977']
 DATA = ['award_notices_RAMP.csv.zip', 'company_revenue_TRAIN.csv.zip',
         'company_revenue_TEST.csv.zip']
 
+
 def main(output_dir='data'):
     filenames = DATA
     full_urls = [URLBASE.format(url) for url in URLS]
@@ -39,9 +40,9 @@ def main(output_dir='data'):
     if os.path.exists(os.path.join('submissions', 'starting_kit')):
         copyfile(
             os.path.join('data', DATA[0]),
-            os.path.join('submissions', 'starting_kit',
-                        DATA[0])
+            os.path.join('submissions', 'starting_kit', DATA[0])
         )
+
 
 if __name__ == '__main__':
     test = os.getenv('RAMP_TEST_MODE', 0)
