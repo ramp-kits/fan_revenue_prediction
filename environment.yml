@@ -5,8 +5,16 @@ dependencies:
   - scipy
   - numpy
   - pandas
-  - matplotlib
   - scikit-learn>=0.20
+  - matplotlib
+  - seaborn
   - jupyter
+  # Extra processing packages
+  - lightgbm
+  - catboost
+  - xgboost
+  - category_encoders
+  - spacy
   - pip:
       - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
+      - recordlinkage
