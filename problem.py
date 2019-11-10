@@ -58,6 +58,11 @@ def _read_data(path, f_name):
                        compression='zip')
     y_array = data[_target_column_name].values
     X_df = data.drop(_target_column_name, axis=1)
+    test = os.getenv('RAMP_TEST_MODE', 0)
+    if test:
+        return X_df[::30], y_array[::30]
+    else:
+        return X_df, y_array
     return X_df, y_array
 
 
