@@ -20,6 +20,5 @@ script:
     - python download_data.py
     - ramp_test_submission --quick-test
     - jupyter nbconvert --execute FAN_starting_kit.ipynb --ExecutePreprocessor.kernel_name=$IPYTHON_KERNEL --ExecutePreprocessor.timeout=6000
-    - travis_wait
 notifications:
   email: true
